@@ -1,0 +1,620 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.phone-container {
+    width: 100%;
+    max-width: 375px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 480px) {
+    .phone-container {
+        max-width: 100%;
+    }
+}
+
+.phone-frame {
+    width: 100%;
+    background: #000;
+    border-radius: 40px;
+    padding: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.phone-frame::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 25px;
+    background: #000;
+    border-radius: 0 0 15px 15px;
+    z-index: 10;
+}
+
+.phone-content {
+    width: 100%;
+    background: linear-gradient(180deg, #420B14 0%, #A81C34 100%);
+    border-radius: 30px;
+    padding: 20px 15px;
+    min-height: 800px;
+    overflow-y: auto;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.logo {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.title-image {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+}
+
+.albums-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.album-card {
+    background: #D39EA5;
+    border-radius: 3px;
+    padding: 4px;
+    position: relative;
+    min-height: 450px;
+}
+
+.album-image-container {
+    position: relative;
+    margin: 4px 0 0 4px;
+}
+
+.album-image {
+    width: calc(100% - 8px);
+    height: auto;
+    border-radius: 3px;
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.album-info {
+    margin: 8px 0 0 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.album-name {
+    font-weight: bold;
+    color: #A30E2B;
+    font-size: 13px;
+    line-height: 1.3;
+    margin-bottom: 2px;
+}
+
+.artist-name {
+    color: #973346;
+    font-size: 11px;
+    font-weight: normal;
+    margin-bottom: 2px;
+    line-height: 1.3;
+}
+
+.album-score {
+    font-weight: bold;
+    color: #420B14;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.reviews-section {
+    margin-top: 7px;
+    margin-left: 4px;
+}
+
+.reviews-title {
+    font-weight: bold;
+    color: #A30E2B;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.no-reviews {
+    color: #000;
+    font-size: 12px;
+}
+
+.review-card {
+    background: #FFFFFF;
+    border-radius: 3px;
+    padding: 3px;
+    position: relative;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+.reviewer-name {
+    color: #000;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.review-score {
+    color: #000;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.review-text {
+    color: #000;
+    font-size: 11px;
+    padding: 3px;
+    margin-top: 2px;
+    line-height: 1.3;
+}
+
+.bottom-image-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 20px 0;
+}
+
+.bottom-image {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.rate-button {
+    background: #D39EA5;
+    color: #A30E2B;
+    border: none;
+    border-radius: 3px;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.rate-button:hover {
+    background: #A30E2B;
+    color: #D39EA5;
+}
+
+.rate-form-container {
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.rate-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    color: #A30E2B;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.form-select {
+    background: #D39EA5;
+    color: #420B14;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    outline: none;
+}
+
+.form-select:focus {
+    background: #FFFFFF;
+}
+
+.form-select option {
+    background: #D39EA5;
+    color: #420B14;
+}
+
+.form-textarea {
+    background: #D39EA5;
+    color: #420B14;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+    outline: none;
+    width: 100%;
+}
+
+.form-textarea:focus {
+    background: #FFFFFF;
+}
+
+.form-textarea::placeholder {
+    color: #973346;
+    opacity: 0.7;
+}
+
+.submit-rate-button {
+    background: #D39EA5;
+    color: #A30E2B;
+    border: none;
+    border-radius: 3px;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin-top: 10px;
+}
+
+.submit-rate-button:hover {
+    background: #A30E2B;
+    color: #D39EA5;
+}
+
+.back-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    background: #D39EA5;
+    color: #A30E2B;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 25px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.back-button:hover {
+    background: #A30E2B;
+    color: #D39EA5;
+}
+
+.reviews-scroll-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-scroll {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding: 10px 15px;
+    animation: scroll-reviews 30s linear infinite;
+    width: fit-content;
+}
+
+@keyframes scroll-reviews {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.scroll-review-card {
+    background: #FFFFFF;
+    border-radius: 3px;
+    padding: 10px;
+    min-width: 200px;
+    flex-shrink: 0;
+}
+
+.scroll-review-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    margin-bottom: 5px;
+}
+
+.scroll-reviewer-name {
+    color: #000;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.scroll-review-score {
+    color: #000;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.scroll-review-text {
+    color: #000;
+    font-size: 11px;
+    padding: 3px;
+    line-height: 1.3;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .phone-frame {
+        border-radius: 20px;
+        padding: 5px;
+    }
+    
+    .phone-frame::before {
+        width: 80px;
+        height: 20px;
+        top: 10px;
+    }
+    
+    .phone-content {
+        border-radius: 15px;
+        padding: 15px 10px;
+        min-height: auto;
+    }
+    
+    .logo {
+        max-width: 120px;
+    }
+    
+    .title-image {
+        max-width: 160px;
+    }
+    
+    .bottom-image {
+        max-width: 160px;
+    }
+    
+    .album-card {
+        min-height: auto;
+    }
+    
+    .album-name {
+        font-size: 12px;
+    }
+    
+    .artist-name {
+        font-size: 10px;
+    }
+    
+    .album-score {
+        font-size: 10px;
+    }
+    
+    .reviews-title {
+        font-size: 12px;
+    }
+    
+    .no-reviews {
+        font-size: 11px;
+    }
+    
+    .reviewer-name,
+    .review-score {
+        font-size: 10px;
+    }
+    
+    .review-text {
+        font-size: 10px;
+    }
+    
+    .rate-button {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    .scroll-review-card {
+        min-width: 160px;
+        padding: 8px;
+    }
+    
+    .scroll-reviewer-name,
+    .scroll-review-score {
+        font-size: 11px;
+    }
+    
+    .scroll-review-text {
+        font-size: 10px;
+    }
+    
+    .form-select,
+    .form-textarea {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .submit-rate-button,
+    .back-button {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+}
+
+/* Адаптивность для планшетов */
+@media (min-width: 481px) and (max-width: 768px) {
+    .phone-container {
+        max-width: 450px;
+    }
+    
+    .phone-content {
+        padding: 25px 20px;
+    }
+    
+    .logo {
+        max-width: 180px;
+    }
+    
+    .title-image {
+        max-width: 220px;
+    }
+    
+    .bottom-image {
+        max-width: 220px;
+    }
+    
+    .scroll-review-card {
+        min-width: 220px;
+    }
+}
+
+/* Адаптивность для больших экранов */
+@media (min-width: 769px) {
+    .phone-container {
+        max-width: 420px;
+    }
+    
+    .phone-content {
+        padding: 25px 20px;
+    }
+    
+    .logo {
+        max-width: 180px;
+    }
+    
+    .title-image {
+        max-width: 240px;
+    }
+    
+    .bottom-image {
+        max-width: 240px;
+    }
+    
+    .scroll-review-card {
+        min-width: 240px;
+    }
+}
+
+/* Улучшение для touch-устройств */
+@media (hover: none) and (pointer: coarse) {
+    .rate-button,
+    .submit-rate-button,
+    .back-button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .form-select,
+    .form-textarea {
+        min-height: 44px;
+    }
+}
+
+/* Поддержка landscape ориентации на мобильных */
+@media (max-width: 768px) and (orientation: landscape) {
+    .phone-content {
+        min-height: auto;
+        max-height: 90vh;
+    }
+    
+    .albums-container {
+        gap: 15px;
+    }
+    
+    .album-card {
+        min-height: auto;
+    }
+}
+
+/* Улучшение для очень маленьких экранов */
+@media (max-width: 360px) {
+    .phone-content {
+        padding: 10px 8px;
+    }
+    
+    .logo {
+        max-width: 100px;
+    }
+    
+    .title-image {
+        max-width: 140px;
+    }
+    
+    .bottom-image {
+        max-width: 140px;
+    }
+    
+    .albums-container {
+        gap: 15px;
+    }
+    
+    .album-card {
+        padding: 3px;
+    }
+    
+    .scroll-review-card {
+        min-width: 140px;
+        padding: 6px;
+    }
+    
+    .rate-button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+}

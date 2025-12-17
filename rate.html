@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оценка музыки</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="phone-frame">
+            <div class="phone-content">
+                <div class="logo-container">
+                    <img src="img/Снимок.png" alt="Логотип" class="logo">
+                </div>
+                
+                <div class="rate-form-container">
+                    <form class="rate-form" id="rateForm">
+                        <div class="form-group">
+                            <label for="album" class="form-label">Альбом</label>
+                            <select id="album" name="album" class="form-select" required>
+                                <option value="">Выберите альбом</option>
+                                <option value="WILD EA$T">WILD EA$T</option>
+                                <option value="треки для зайчика">треки для зайчика</option>
+                                <option value="*би меня, малышка">*би меня, малышка</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="artist" class="form-label">Исполнитель</label>
+                            <select id="artist" name="artist" class="form-select" required>
+                                <option value="">Выберите исполнителя</option>
+                                <option value="Saluki">Saluki</option>
+                                <option value="Zhanulka">Zhanulka</option>
+                                <option value="Cupsize">Cupsize</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="score" class="form-label">Оценка (баллы)</label>
+                            <select id="score" name="score" class="form-select" required>
+                                <option value="">Выберите оценку</option>
+                                <option value="1">1</option>
+                                <option value="1.1">1,1</option>
+                                <option value="1.2">1,2</option>
+                                <option value="1.3">1,3</option>
+                                <option value="1.4">1,4</option>
+                                <option value="1.5">1,5</option>
+                                <option value="1.6">1,6</option>
+                                <option value="1.7">1,7</option>
+                                <option value="1.8">1,8</option>
+                                <option value="1.9">1,9</option>
+                                <option value="2">2</option>
+                                <option value="2.1">2,1</option>
+                                <option value="2.2">2,2</option>
+                                <option value="2.3">2,3</option>
+                                <option value="2.4">2,4</option>
+                                <option value="2.5">2,5</option>
+                                <option value="2.6">2,6</option>
+                                <option value="2.7">2,7</option>
+                                <option value="2.8">2,8</option>
+                                <option value="2.9">2,9</option>
+                                <option value="3">3</option>
+                                <option value="3.1">3,1</option>
+                                <option value="3.2">3,2</option>
+                                <option value="3.3">3,3</option>
+                                <option value="3.4">3,4</option>
+                                <option value="3.5">3,5</option>
+                                <option value="3.6">3,6</option>
+                                <option value="3.7">3,7</option>
+                                <option value="3.8">3,8</option>
+                                <option value="3.9">3,9</option>
+                                <option value="4">4</option>
+                                <option value="4.1">4,1</option>
+                                <option value="4.2">4,2</option>
+                                <option value="4.3">4,3</option>
+                                <option value="4.4">4,4</option>
+                                <option value="4.5">4,5</option>
+                                <option value="4.6">4,6</option>
+                                <option value="4.7">4,7</option>
+                                <option value="4.8">4,8</option>
+                                <option value="4.9">4,9</option>
+                                <option value="5">5</option>
+                                <option value="5.1">5,1</option>
+                                <option value="5.2">5,2</option>
+                                <option value="5.3">5,3</option>
+                                <option value="5.4">5,4</option>
+                                <option value="5.5">5,5</option>
+                                <option value="5.6">5,6</option>
+                                <option value="5.7">5,7</option>
+                                <option value="5.8">5,8</option>
+                                <option value="5.9">5,9</option>
+                                <option value="6">6</option>
+                                <option value="6.1">6,1</option>
+                                <option value="6.2">6,2</option>
+                                <option value="6.3">6,3</option>
+                                <option value="6.4">6,4</option>
+                                <option value="6.5">6,5</option>
+                                <option value="6.6">6,6</option>
+                                <option value="6.7">6,7</option>
+                                <option value="6.8">6,8</option>
+                                <option value="6.9">6,9</option>
+                                <option value="7">7</option>
+                                <option value="7.1">7,1</option>
+                                <option value="7.2">7,2</option>
+                                <option value="7.3">7,3</option>
+                                <option value="7.4">7,4</option>
+                                <option value="7.5">7,5</option>
+                                <option value="7.6">7,6</option>
+                                <option value="7.7">7,7</option>
+                                <option value="7.8">7,8</option>
+                                <option value="7.9">7,9</option>
+                                <option value="8">8</option>
+                                <option value="8.1">8,1</option>
+                                <option value="8.2">8,2</option>
+                                <option value="8.3">8,3</option>
+                                <option value="8.4">8,4</option>
+                                <option value="8.5">8,5</option>
+                                <option value="8.6">8,6</option>
+                                <option value="8.7">8,7</option>
+                                <option value="8.8">8,8</option>
+                                <option value="8.9">8,9</option>
+                                <option value="9">9</option>
+                                <option value="9.1">9,1</option>
+                                <option value="9.2">9,2</option>
+                                <option value="9.3">9,3</option>
+                                <option value="9.4">9,4</option>
+                                <option value="9.5">9,5</option>
+                                <option value="9.6">9,6</option>
+                                <option value="9.7">9,7</option>
+                                <option value="9.8">9,8</option>
+                                <option value="9.9">9,9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="comment" class="form-label">Комментарий</label>
+                            <textarea id="comment" name="comment" class="form-textarea" rows="4" placeholder="Напишите ваш комментарий к рецензии..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-rate-button">Отправить оценку</button>
+                    </form>
+                </div>
+                
+                <div class="back-button-container">
+                    <a href="index.html" class="back-button">Назад</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('rateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const album = document.getElementById('album').value;
+            const artist = document.getElementById('artist').value;
+            const score = document.getElementById('score').value;
+            const comment = document.getElementById('comment').value;
+            
+            if (album && artist && score) {
+                let message = 'Оценка отправлена!\nАльбом: ' + album + '\nИсполнитель: ' + artist + '\nОценка: ' + score.replace('.', ',') + ' баллов';
+                if (comment) {
+                    message += '\nКомментарий: ' + comment;
+                }
+                alert(message);
+                // Здесь можно добавить отправку данных на сервер
+            }
+        });
+    </script>
+</body>
+</html>
+

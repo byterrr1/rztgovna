@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыкальное приложение</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="phone-frame">
+            <div class="phone-content">
+                <div class="logo-container">
+                    <img src="img/Снимок.png" alt="Логотип" class="logo">
+                </div>
+                <div class="title-container">
+                    <img src="img/Снимок2.png" alt="Заголовок" class="title-image">
+                </div>
+                
+                <div class="albums-container">
+                    <!-- Альбом 1 -->
+                    <div class="album-card">
+                        <div class="album-image-container">
+                            <img src="img/wild east.jpg" alt="Wild East" class="album-image">
+                        </div>
+                        <div class="album-info">
+                            <div class="album-name">WILD EA$T</div>
+                            <div class="artist-name">Saluki</div>
+                            <div class="album-score">9,8 баллов</div>
+                        </div>
+                        <div class="reviews-section">
+                            <div class="reviews-title">Рецензии</div>
+                            <div class="no-reviews">Здесь пока ничего нет...</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Альбом 2 -->
+                    <div class="album-card">
+                        <div class="album-image-container">
+                            <img src="img/zhanulka.png" alt="Zhanulka" class="album-image">
+                        </div>
+                        <div class="album-info">
+                            <div class="album-name">треки для зайчика</div>
+                            <div class="artist-name">Zhanulka</div>
+                            <div class="album-score">10 баллов</div>
+                        </div>
+                        <div class="reviews-section">
+                            <div class="reviews-title">Рецензии</div>
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <span class="reviewer-name">Кира</span>
+                                    <span class="review-score">10 баллов</span>
+                                </div>
+                                <div class="review-text">О***нно</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Альбом 3 -->
+                    <div class="album-card">
+                        <div class="album-image-container">
+                            <img src="img/cupsize1.png" alt="Cupsize" class="album-image">
+                        </div>
+                        <div class="album-info">
+                            <div class="album-name">*би меня, малышка</div>
+                            <div class="artist-name">Cupsize</div>
+                            <div class="album-score">8,9 баллов</div>
+                        </div>
+                        <div class="reviews-section">
+                            <div class="reviews-title">Рецензии</div>
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <span class="reviewer-name">Виталя</span>
+                                    <span class="review-score">10 баллов</span>
+                                </div>
+                                <div class="review-text">И МЕНЯ!!!!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bottom-image-container">
+                    <img src="img/Снимок3.png" alt="Изображение" class="bottom-image">
+                </div>
+                
+                <div class="button-container">
+                    <a href="rate.html" class="rate-button">Оценить музыку</a>
+                </div>
+                
+                <div class="bottom-image-container">
+                    <img src="img/Снимок4.png" alt="Изображение" class="bottom-image">
+                </div>
+                
+                <div class="reviews-scroll-container">
+                    <div class="reviews-scroll">
+                        <!-- Рецензия из второго альбома -->
+                        <div class="scroll-review-card">
+                            <div class="scroll-review-header">
+                                <span class="scroll-reviewer-name">Кира</span>
+                                <span class="scroll-review-score">10 баллов</span>
+                            </div>
+                            <div class="scroll-review-text">О***нно</div>
+                        </div>
+                        
+                        <!-- Рецензия из третьего альбома -->
+                        <div class="scroll-review-card">
+                            <div class="scroll-review-header">
+                                <span class="scroll-reviewer-name">Виталя</span>
+                                <span class="scroll-review-score">10 баллов</span>
+                            </div>
+                            <div class="scroll-review-text">И МЕНЯ!!!!</div>
+                        </div>
+                        
+                        <!-- Дубликаты для бесконечной анимации -->
+                        <div class="scroll-review-card">
+                            <div class="scroll-review-header">
+                                <span class="scroll-reviewer-name">Кира</span>
+                                <span class="scroll-review-score">10 баллов</span>
+                            </div>
+                            <div class="scroll-review-text">О***нно</div>
+                        </div>
+                        
+                        <div class="scroll-review-card">
+                            <div class="scroll-review-header">
+                                <span class="scroll-reviewer-name">Виталя</span>
+                                <span class="scroll-review-score">10 баллов</span>
+                            </div>
+                            <div class="scroll-review-text">И МЕНЯ!!!!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Устанавливаем ширину карточек рецензий равной ширине изображения + 3px
+        document.addEventListener('DOMContentLoaded', function() {
+            const albumCards = document.querySelectorAll('.album-card');
+            albumCards.forEach(card => {
+                const imageContainer = card.querySelector('.album-image-container');
+                const image = card.querySelector('.album-image');
+                const reviewCard = card.querySelector('.review-card');
+                
+                if (image && reviewCard) {
+                    // Ждем загрузки изображения
+                    if (image.complete) {
+                        setReviewCardWidth();
+                    } else {
+                        image.addEventListener('load', setReviewCardWidth);
+                    }
+                    
+                    function setReviewCardWidth() {
+                        const imageWidth = image.offsetWidth;
+                        reviewCard.style.width = (imageWidth + 3) + 'px';
+                    }
+                    
+                    // Также обрабатываем изменение размера окна
+                    window.addEventListener('resize', function() {
+                        setTimeout(setReviewCardWidth, 100);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
